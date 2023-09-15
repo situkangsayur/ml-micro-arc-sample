@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "ml-fraud"
+version = "0.1.0"
+description = "Sample extend lib from ml-abse for fraud case"
+authors = ["hendri karisma <situkangsayur@gmail.com>"]
+readme = "README.md"
+packages = [{include = "ml_fraud"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

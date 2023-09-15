@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "ml-image"
+version = "0.1.0"
+description = "Sample extend library for image case"
+authors = ["hendri karisma <situkangsayur@gmail.com>"]
+readme = "README.md"
+packages = [{include = "ml_image"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+ml-abs = {path = "../ml-abs/dist/ml_abs-0.1.0-py3-none-any.whl"}
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

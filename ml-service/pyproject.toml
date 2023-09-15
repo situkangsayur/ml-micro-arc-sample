@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "ml-service"
+version = "0.1.0"
+description = "sample service that use specific libs for fraud and image"
+authors = ["hendri karisma <situkangsayur@gmail.com>"]
+readme = "README.md"
+packages = [{include = "ml_service"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.103.1"
+sqlalchemy = "^2.0.20"
+uvicorn = "^0.23.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

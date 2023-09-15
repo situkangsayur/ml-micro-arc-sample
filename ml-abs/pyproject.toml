@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "ml-abs"
+version = "0.1.0"
+description = "Sample ML Abstraction for Extend ML Libs"
+authors = ["hendri karisma <situkangsayur@gmail.com>"]
+readme = "README.md"
+packages = [{include = "ml_abs"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pydantic = "^2.3.0"
+uuid = "^1.30"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
