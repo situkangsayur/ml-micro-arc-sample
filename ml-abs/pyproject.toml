@@ -7,7 +7,7 @@ readme = "README.md"
 packages = [{include = "ml_abs"}]
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = ">=3.9, <=3.11"
 pydantic = "^2.3.0"
 uuid = "^1.30"
 

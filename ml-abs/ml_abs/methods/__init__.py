@@ -3,6 +3,7 @@ from typing import Any
 
 from ml_abs.model import Model
 from ml_abs.pipeline import Pipeline
+from ml_abs.utilities.data_loader import LoaderAbstract
 
 
 class MethodAbstract(ABC):
@@ -11,6 +12,7 @@ class MethodAbstract(ABC):
     model: Model
     obj_model: Any
     target: str = ''
+    data_loader: LoaderAbstract
 
     def set_pipeline(self, pipeline: Pipeline) -> None:
         self.pipeline = pipeline
@@ -27,7 +29,5 @@ class MethodAbstract(ABC):
         raise Exception('Not yet implemented')
 
     @abstractmethod
-    def predict(self) -> Model:
+    def predict(self) -> Any:
         raise Exception('Not yet implemented')
-
-

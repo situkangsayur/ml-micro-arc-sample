@@ -1,10 +1,7 @@
-import os
-from fastapi import FastAPI
-from .routers.image import image as image_route
-from .routers.fraud import fraud as fraud_route
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
+import os
 
 PG_USERNAME = os.getenv('PG_USERNAME')
 PG_PASSWORD = os.getenv('PG_PASSWORD')
@@ -20,14 +17,9 @@ SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 Base = declarative_base()
 
-
-app = FastAPI(title='Sample ML Service', 
-              version='0.1.0', 
-              openapi_url='/api/docs')
-
-@app.get("/")
-def root():
-    return {'message': 'Hello, ML Service here!'}
-    
-app.include_router(image_route, prefix='/api/v1/image')
-app.include_router(fraud_route, prefix='/api/v1/fraud')
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
